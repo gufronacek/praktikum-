@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Surat Masuk </title>
-</head>
-<body>
-    <h1>Halaman Surat Masuk </h1>
-    <table border="1" cellpadding="10">
-        <thead>
+@extends('layouts.app')
+@section('title', 'halaman surat masuk')
+    <h1>halaman surat</h1>
+
+@section('content')
+    
+<h1>Halaman Surat Masuk </h1>
+<table border="1" cellpadding="10">
+    <thead>
             <tr>
                 <th>No</th>
                 <th>Nomer Surat</th>
@@ -28,12 +25,12 @@
                <td>{{ $surat['pengirim'] }}</td>
                <td>{{ $surat['perihal'] }}</td>
                <td>
-                <a href="{{ route('surat-masuk.show', $surat['id']) }}"> 
-                        Detail Surat </a>
-               </td>
-           </tr>
-            @endforeach
-        </tbody>
-    </table>
-</body>
-</html>
+                   <a href="{{ route('surat-masuk.show', $surat['id']) }}"> 
+                       Detail Surat </a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        
+@endsection
