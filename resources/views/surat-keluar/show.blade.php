@@ -7,22 +7,22 @@
     @if ($surat)
     <p>
         <strong>Nomor Surat:</strong>
-        {{ $surat['nomor_surat'] }}
+        {{ $surat->nomor_surat }}
         
     </p>
     <p>
         <strong>Tanggal:</strong>
-        {{ $surat['tanggal'] }}
+        {{ $surat->tanggal }}
         
     </p>
     <p>
-        <strong>Nomor Surat:</strong>
-        {{ $surat['pengirim'] }}
+        <strong>Pengirim:</strong>
+        {{ $surat->pengirim }}
 
     </p>
     <p>
         <strong>perihal:</strong>
-        {{ $surat['perihal'] }}
+        {{ $surat->perihal }}
         
     </p>
     @else
