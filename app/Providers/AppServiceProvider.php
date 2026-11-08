@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Providers;
-
+use App\Models\User;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Gate;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,8 +19,12 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
-    {
-        //
-    }
+    
+public function boot(): void
+{
+    Gate::define('manage-letters', function (User $user): bool {
+        return $user->role === 'petugas';
+    });
+}
+
 }

@@ -21,5 +21,12 @@
     <footer>
         <p>Sistem informasi surat</p>
     </footer>
+    @auth
+        <span>Masuk Sebagai, {{ Auth::user()->name }}</span>
+        <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
+    @endauth
 </body>
 </html>

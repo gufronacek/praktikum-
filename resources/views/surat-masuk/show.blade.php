@@ -1,4 +1,24 @@
+
 @extends('layouts.app')
+
+@section('title', 'Detail Surat Masuk')
+
+@section('content')
+    <h1>Detail Surat Masuk</h1>
+
+    <p>Nomor: {{ $surat->nomor_surat }}</p>
+    <p>Tanggal: {{ $surat->tanggal }}</p>
+    <p>Pengirim: {{ $surat->pengirim }}</p>
+    <p>Perihal: {{ $surat->perihal }}</p>
+    <p>Keterangan: {{ $surat->keterangan ?? '-' }}</p>
+
+    <a href="{{ route('surat-masuk.index') }}">Kembali</a>
+@endsection
+
+
+
+
+{{-- @extends('layouts.app')
 @section('title', 'halaman surat masuk show')
 @section('content')
     
@@ -28,4 +48,4 @@
     <p>surat tidak ditemukan</p>
     @endif
     <a href="{{ route('surat-masuk.index') }}">kembali</a>
-    @endsection
+    @endsection --}}
